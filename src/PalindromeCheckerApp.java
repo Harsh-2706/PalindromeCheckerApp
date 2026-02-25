@@ -4,22 +4,19 @@ public class PalindromeCheckerApp {
     private static final String APP_VERSION = "Version 1.0";
 
     public static void main(String[] args) {
-        uc6();
+        uc7();
         System.out.println("Program Finished.");
     }
 
-    public static void uc6() {
-        String word = "level";
-        java.util.Queue<Character> queue = new java.util.LinkedList<>();
-        java.util.Stack<Character> stack = new java.util.Stack<>();
+    public static void uc7() {
+        String word = "racecar";
+        java.util.Deque<Character> deque = new java.util.LinkedList<>();
         for (int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            queue.add(ch);
-            stack.push(ch);
+            deque.addLast(word.charAt(i));
         }
         boolean isPalindrome = true;
-        while (!queue.isEmpty() && !stack.isEmpty()) {
-            if (!queue.poll().equals(stack.pop())) {
+        while (deque.size() > 1) {
+            if (!deque.removeFirst().equals(deque.removeLast())) {
                 isPalindrome = false;
                 break;
             }
