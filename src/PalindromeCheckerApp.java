@@ -8,6 +8,9 @@ public class PalindromeCheckerApp {
         System.out.println("Program Finished.");
     }
 
+
+
+
     public static void uc4() {
         String word = "radar";
         char[] characters = word.toCharArray();
