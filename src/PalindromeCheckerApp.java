@@ -23,5 +23,9 @@ public class PalindromeCheckerApp {
             start++;
             end--;
         }
+                if (isPalindrome) {
+            System.out.println(word + " is a Palindrome.");
+        } else {
+            System.out.println(word + " is NOT a Palindrome.");
     }
 }
