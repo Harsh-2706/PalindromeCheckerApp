@@ -4,32 +4,20 @@ public class PalindromeCheckerApp {
     private static final String APP_VERSION = "Version 1.0";
 
     public static void main(String[] args) {
-//        uc1();
-        uc2();
-//        uc3();
-//        uc4();
-//        uc5();
-//        uc6();
-//        uc7();
-//        uc8();
-//        uc9();
-//        uc10();
-//        uc11();
-//        uc12();
-//        uc13();
+        uc3();
         System.out.println("Program Finished.");
     }
 
-    public static void uc2() {
-        String word = "madam";
+    public static void uc3() {
+        String original = "level";
         String reversed = "";
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed += word.charAt(i);
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
-        if (word.equals(reversed)) {
-            System.out.println(word + " is a Palindrome.");
+        if (original.equals(reversed)) {
+            System.out.println(original + " is a Palindrome.");
         } else {
-            System.out.println(word + " is NOT a Palindrome.");
+            System.out.println(original + " is NOT a Palindrome.");
         }
     }
 }
