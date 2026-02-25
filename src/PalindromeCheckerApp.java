@@ -5,7 +5,7 @@ public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
         uc1();
-//        uc2();
+        uc2();
 //        uc3();
 //        uc4();
 //        uc5();
@@ -26,5 +26,17 @@ public class PalindromeCheckerApp {
         System.out.println("Application Name: " + APP_NAME);
         System.out.println("Application Version: " + APP_VERSION);
         System.out.println("=================================");
+    }
+    public static void uc2() {
+        String word = "madam";
+        String reversed = "";
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed += word.charAt(i);
+        }
+        if (word.equals(reversed)) {
+            System.out.println(word + " is a Palindrome.");
+        } else {
+            System.out.println(word + " is NOT a Palindrome.");
+        }
     }
 }
