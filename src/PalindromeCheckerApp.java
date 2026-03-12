@@ -4,58 +4,42 @@ public class PalindromeCheckerApp {
     private static final String APP_VERSION = "Version 1.0";
 
     public static void main(String[] args) {
-        uc8();
+        uc9();
         System.out.println("Program Finished.");
     }
 
-    public static void uc8() {
-        String word = "madam";
-        class Node {
-            char data;
-            Node next;
-            Node(char data) { this.data = data; }
-        }
-        Node head = null;
-        Node tail = null;
-        for (char ch : word.toCharArray()) {
-            Node newNode = new Node(ch);
-            if (head == null) {
-                head = newNode;
-                tail = newNode;
-            } else {
-                tail.next = newNode;
-                tail = newNode;
-            }
-        }
-        Node slow = head;
-        Node fast = head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        Node prev = null;
-        Node current = slow;
-        while (current != null) {
-            Node nextNode = current.next;
-            current.next = prev;
-            prev = current;
-            current = nextNode;
-        }
-        Node secondHalf = prev;
-        Node firstHalf = head;
-        boolean isPalindrome = true;
-        while (secondHalf != null) {
-            if (firstHalf.data != secondHalf.data) {
-                isPalindrome = false;
-                break;
-            }
-            firstHalf = firstHalf.next;
-            secondHalf = secondHalf.next;
-        }
-        if (isPalindrome) {
-            System.out.println(word + " is a Palindrome.");
+    import java.util.Scanner;
+
+    public static void uc9() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== Recursive Palindrome Checker ===");
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        boolean result = isPalindromeRecursive(input, 0, input.length() - 1);
+
+        if(result) {
+            System.out.println("The string is a Palindrome.");
         } else {
-            System.out.println(word + " is NOT a Palindrome.");
+            System.out.println("The string is NOT a Palindrome.");
         }
+    }
+    public static boolean isPalindromeRecursive(String str, int start, int end) {
+
+        // Base condition
+        if(start >= end) {
+            return true;
+        }
+
+        // Check mismatch
+        if(str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+
+        // Recursive call
+        return isPalindromeRecursive(str, start + 1, end - 1);
+    }
     }
 }
